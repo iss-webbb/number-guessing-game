@@ -16,7 +16,6 @@ body {
     color: #333;
 }
 
-/* Container for game content */
 body > h1:first-of-type {
     position: absolute;
     top: 30px;
@@ -136,7 +135,6 @@ input::placeholder {
     }
 }
 
-/* Responsive design */
 @media (max-width: 480px) {
     #h1 {
         font-size: 24px;
