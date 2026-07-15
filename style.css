@@ -1,43 +1,162 @@
 * {
+    margin: 0;
     padding: 0;
     font-style: normal;
     box-sizing: border-box;
 }
 
 body {
-    min-height: 97vh;
-    background-color: rgba(238, 170, 170, 0);
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-#points{
-    margin-top: 160px;
-}
-
-#points,
-#h1,
-#chance,
-#lose,
-#err {
-    display: flex;
     justify-content: center;
-    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    color: #333;
+}
+
+/* Container for game content */
+body > h1:first-of-type {
+    position: absolute;
+    top: 30px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #555;
+}
+
+#points {
+    position: absolute;
+    top: 30px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #2ecc71;
+}
+
+#h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-align: center;
+    letter-spacing: -0.5px;
+}
+
+#chance {
+    font-size: 16px;
+    font-weight: 500;
+    color: #666;
+    margin-bottom: 30px;
 }
 
 input {
-    padding: 10px;
+    padding: 14px 18px;
     border-radius: 8px;
-    margin-top: 20px;
+    border: 2px solid #ddd;
+    font-size: 16px;
+    width: 100%;
+    max-width: 300px;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: white;
+}
+
+input:focus {
+    border-color: #333;
+    box-shadow: 0 0 0 3px rgba(51, 51, 51, 0.1);
+}
+
+input::placeholder {
+    color: #999;
 }
 
 #btn {
-    padding: 10px;
-    font-size: 13px;
+    padding: 14px 32px;
+    font-size: 16px;
+    font-weight: 600;
     border-radius: 8px;
-    background-color: blue;
+    background-color: #333;
     color: white;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 16px;
+    border: none;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+#btn:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(51, 51, 51, 0.2);
+}
+
+#btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(51, 51, 51, 0.1);
+}
+
+#err {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 20px;
+    min-height: 28px;
+    text-align: center;
+    color: #e74c3c;
+    animation: fadeIn 0.3s ease;
+}
+
+#lose {
+    font-size: 32px;
+    font-weight: 700;
+    margin-top: 30px;
+    color: #e74c3c;
+    animation: pulse 0.6s ease;
+}
+
+#err:empty {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    #h1 {
+        font-size: 24px;
+    }
+
+    #chance {
+        font-size: 14px;
+    }
+
+    input {
+        font-size: 16px;
+        padding: 12px 16px;
+    }
+
+    #btn {
+        padding: 12px 28px;
+        font-size: 15px;
+    }
+
+    #err {
+        font-size: 16px;
+    }
 }
